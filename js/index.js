@@ -1,75 +1,47 @@
-// import $ from 'jquery';
-// import tumblr from 'tumblr.js';
+$(window).scroll(function(){
+	const st = $(this).scrollTop();
+	if (st >= 300) {
+		var valDeux = (st/3)-400; 
+		var valTois = -((st/3)-500);
+		var valQuatre = -((st/4)-600);
 
-// const client = tumblr.createClient({
-//     consumer_key: 'kVT2VuJt225CBW8wVs7uKg0Qv044wYdpJl5pVXnohQbjgpUeDu',
-//     consumer_secret: 'yVE6gEZLPz6MYRJdW3ayyk2WaTv7NJ6qpPy2aal42pfHoaHx5E',
-//     token: 'Q96oXJGbA3W9Svdr0aOE5PPJFZtRqN7tGJMuestywCcH0wL2rO',
-//     token_secret: 'xLtVp4krrF3outAxuj04rQP8sudIiYFyxk9KbU7wpWUM3ittSq',
-// });
+		$(".panel").addClass("trans");
 
-// client.blogPosts('valen-romanovskaya.tumblr.com', {type: 'photo', tag: TagName, limit: 50}, (err, data)=> {
-//     data.posts.forEach(function(posts) {
-//         posts.photos.forEach(function(photo) {
-//             const mediumPhoto = photo.alt_sizes[4];
-//             const largePhoto = photo.original_size;
-//             const div = document.createElement( 'div' );
-//             if (mediumPhoto.height > mediumPhoto.width) {
-//                 $( div ).addClass( 'item2' );
-//             } else {
-//                 $( div ).addClass( 'item' );
-//             }
-//             $( div ).append('<img src="' + mediumPhoto.url + '" rel="' + largePhoto.url + '"> ');
-//             $('#photoalbum').append(div);
-//         });
-//     });
-// });
+		if (valDeux >= -100 && valDeux <=0) {
+			$(".deux").css({"display":"flex", "transform":"translate3d("+valDeux+"%, 0, 0)"});
+		}else if (valDeux < -100) {
+			$(".deux").css({"display":"flex", "transform":"translate3d(-100%, 0, 0)"});
+		} else if (valDeux > 0) {
+			$(".deux").css({"display":"flex", "transform":"translate3d(0, 0, 0)"});
+		}else {
+			$(".deux").css({"display":"none"});
+		};
 
-// let elem = null;
+		if (valTois <= 100 && valTois >=0) {
+		$(".trois").css({"display":"flex", "transform":"translate3d("+valTois+"%, 0, 0)"});
+		} else if ( valTois > 100) {
+			$(".trois").css({"display":"flex", "transform":"translate3d(100%, 0, 0)"});
+		} else if ( valTois < 0) {
+			$(".trois").css({"display":"flex", "transform":"translate3d( 0, 0, 0)"});
+		}else{
+			$(".trois").css({"display":"none"});
+		};
 
-// const getRel = () => {
-//     const thisLargePhoto = $(elem).children().attr('rel');
-//     $('div.GalleryPhotoSlide').empty();
-//     $('.GalleryPhotoSlider').append('<div class="GalleryPhotoSlide"><img src="' + thisLargePhoto + '"></div>');
-// };
-// const chevronDisplay = () => {
-//     const next = $(elem).next().children().attr('rel');
-//     const prev = $(elem).prev().children().attr('rel');
-//     if (prev == undefined) {
-//     $('.backward>i').css('display', 'none');
-//     } else {
-//     $('.backward>i').css('display', 'block');   
-//     };
-//     if (next == undefined) {
-//     $('.forward>i').css('display', 'none');
-//     } else {
-//     $('.forward>i').css('display', 'block');   
-//     };
-// };
+		if (valQuatre <= 100 && valQuatre >=0) {
+			$(".quatre").css({"display":"flex", "transform":"translate3d( 0,"+valQuatre+"%, 0)"});
+		}else if (valQuatre > 100) {
+			$(".quatre").css({"display":"flex", "transform":"translate3d( 0, 100%, 0)"});
+		} else if (valQuatre < 0) {
+			$(".quatre").css({"display":"flex", "transform":"translate3d(0, 0, 0)"});
+		}else {
+			$(".quatre").css({"display":"none"});
+		};
 
-// $('#photoalbum').on('click', 'div', (event) => {
-//     $('#overlay').css('display', 'block');
-//     console.log(event);
-//     elem = event.currentTarget;
-//     chevronDisplay();
-//     getRel();
-
-//     $('.backward').on('click', 'i', () => {
-//         elem = $(elem).prev();
-//         chevronDisplay();
-//         getRel();
-//     });
-//     $('.forward').on('click', 'i', () => {
-//         elem = $(elem).next();
-//         chevronDisplay();
-//         getRel();
-//     });
-// });
-
-// $('.close-btn').on('click', () => {
-//     $('#overlay').css('display', 'none');
-//     $('div.GalleryPhotoSlide').empty();
-// });
-
-
-console.log("Hello webpack!");
+	} else {
+		$(".panel").removeClass("trans");
+	};
+	// console.log(st);
+	// console.log("valDeux", valDeux);
+	// console.log("valTois", valTois);
+	// console.log("valQuatre", valQuatre);
+});
