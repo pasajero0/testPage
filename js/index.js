@@ -4,6 +4,7 @@ $(window).scroll(function(){
 		var valDeux = (st/3)-400; 
 		var valTois = -((st/3)-600);
 		var valQuatre = -((st/4)-700);
+		var valCinq = -((st/4)-900);
 
 		$(".box").css({"position":"fixed"});
 		$(".box").addClass("trans");
@@ -38,6 +39,16 @@ $(window).scroll(function(){
 			$(".quatre").css({"display":"none"});
 		};
 
+		if (valCinq <= 100 && valCinq >=0) {
+			$(".cinq").css({"display":"flex", "transform":"translate3d( 0,"+valCinq+"%, 0)"});
+		}else if (valCinq > 100) {
+			$(".cinq").css({"display":"flex", "transform":"translate3d( 0, 100%, 0)"});
+		} else if (valCinq < 0) {
+			$(".cinq").css({"display":"flex", "transform":"translate3d(0, 0, 0)"});
+		}else {
+			$(".cinq").css({"display":"none"});
+		};
+
 	}else{
 		$(".box").css({"position":"relative"});
 		$(".box").removeClass("trans");
@@ -46,4 +57,5 @@ $(window).scroll(function(){
 	// console.log("valDeux", valDeux);
 	// console.log("valTois", valTois);
 	// console.log("valQuatre", valQuatre);
+	console.log("valCinq", valCinq);
 });
