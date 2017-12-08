@@ -136,11 +136,32 @@ body{
 	animation: bounceInLeft 1.5s;
 }
 #testfield {
-	position: relative;
-	width: 100%;
-	height: 2500px;
+	top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    margin: 0px;
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    /*padding-bottom: 2650px;*/
+    height: 2650px;
 	overflow: hidden;
 	animation: fadeInUp 2s;
+}
+.box {
+	position: relative;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    bottom: auto;
+    right: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 }
 .panel {
 	display: flex;
@@ -151,13 +172,11 @@ body{
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	opacity: .5;
+	opacity: 1;
 	transition: .2s;
-	transform: scale(0.74);
 }
 .trans {
 	opacity: 1;
-	transform: scale(1);
 	transition: .4s;
 }
 .un{

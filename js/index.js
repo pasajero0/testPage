@@ -1,10 +1,11 @@
 $(window).scroll(function(){
 	const st = $(this).scrollTop();
-	if (st >= 300) {
+	if (st >= 500 ) {
 		var valDeux = (st/3)-400; 
 		var valTois = -((st/3)-500);
 		var valQuatre = -((st/4)-600);
 
+		$(".box").css({"position":"fixed"});
 		$(".panel").addClass("trans");
 
 		if (valDeux >= -100 && valDeux <=0) {
@@ -37,10 +38,11 @@ $(window).scroll(function(){
 			$(".quatre").css({"display":"none"});
 		};
 
-	} else {
+	}else{
+		$(".box").css({"position":"relative"});
 		$(".panel").removeClass("trans");
 	};
-	// console.log(st);
+	console.log(st);
 	// console.log("valDeux", valDeux);
 	// console.log("valTois", valTois);
 	// console.log("valQuatre", valQuatre);
