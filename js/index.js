@@ -2,11 +2,11 @@ $(window).scroll(function(){
 	const st = $(this).scrollTop();
 	if (st >= 500 ) {
 		var valDeux = (st/3)-400; 
-		var valTois = -((st/3)-500);
-		var valQuatre = -((st/4)-600);
+		var valTois = -((st/3)-600);
+		var valQuatre = -((st/4)-700);
 
 		$(".box").css({"position":"fixed"});
-		$(".panel").addClass("trans");
+		$(".box").addClass("trans");
 
 		if (valDeux >= -100 && valDeux <=0) {
 			$(".deux").css({"display":"flex", "transform":"translate3d("+valDeux+"%, 0, 0)"});
@@ -40,7 +40,7 @@ $(window).scroll(function(){
 
 	}else{
 		$(".box").css({"position":"relative"});
-		$(".panel").removeClass("trans");
+		$(".box").removeClass("trans");
 	};
 	console.log(st);
 	// console.log("valDeux", valDeux);
