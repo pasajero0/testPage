@@ -1,3 +1,12 @@
+document.body.onload = function(){
+ 	setTimeout(function(){
+ 		var preloader = document.getElementById('pagePreloader');
+ 		if (!preloader.classList.contains('.done')){
+ 			$('#pagePreloader').addClass("done");
+ 			console.log('-_-');
+ 		}
+ 	}, 300);
+};
 $(window).scroll(function(){
 	const st = $(this).scrollTop();
 	if (st >= 500 ) {
