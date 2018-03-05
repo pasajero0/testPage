@@ -164,19 +164,19 @@ body{
 	font-family: ComfortaaBold;
 	text-align: center;
 	font-size: 130px;
-	color: #9b9b9b;
+	color: #024fa4;
 	margin: 0 auto;
 	padding-top: 30px;
-	text-shadow: 2px 2px 2px black;
+	text-shadow: 2px 2px 2px #000000ad;
 	animation: bounceInDown 1.7s;
   animation-delay: .25s;
 }
 .welcome .p2{
 	text-align: center;
 	font-size: 100px;
-	color: #9b9b9b;
+	color: #024fa4;
 	margin: 0 auto;
-	text-shadow: 2px 2px 2px black; 
+	text-shadow: 2px 2px 2px #000000ad; 
 	animation: bounceInDown 2s;
   animation-delay: .25s;
 }
