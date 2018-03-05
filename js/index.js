@@ -5,7 +5,7 @@ document.body.onload = function(){
  			$('#pagePreloader').addClass("done");
  			console.log('-_-');
  		}
- 	}, 300);
+ 	}, 400);
 };
 $(window).scroll(function(){
 	const st = $(this).scrollTop();

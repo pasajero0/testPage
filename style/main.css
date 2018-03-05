@@ -98,6 +98,16 @@
  		transform: rotate(360deg);
  	}
  }
+ @keyframes flash {
+  from,
+  to {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
 /*------------------------------------------------------------------------------------------PRELOADER*/
 .preloader{
 	display: flex;
@@ -113,18 +123,26 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgb(255, 133, 0);
     transition: .5s all;
     opacity: 1;
     visibility: visible;
 }
-.loader{
-	width: 50px;
-    height: 50px;
-    border: 5px solid white;
-    border-top-color: #0050A4;
-    border-radius: 50%;
-    animation: spin .3s infinite linear;
+h1 {
+  text-align: center; 
+  color: white; 
+  font-size: 150px;
+}
+h1 span:nth-of-type(1) {
+  animation: flash infinite 1s;
+}
+h1 span:nth-of-type(2) {
+  animation: flash infinite 1s;
+  animation-delay: .2s;
+}
+h1 span:nth-of-type(3) {
+  animation: flash infinite 1s;
+  animation-delay: .4s;
 }
 .done{ 
 	opacity: 0;
@@ -146,19 +164,21 @@ body{
 	font-family: ComfortaaBold;
 	text-align: center;
 	font-size: 130px;
-	color: tomato;
+	color: #9b9b9b;
 	margin: 0 auto;
 	padding-top: 30px;
-	text-shadow: 1px 1px 2px black; 
+	text-shadow: 2px 2px 2px black;
 	animation: bounceInDown 1.7s;
+  animation-delay: .25s;
 }
 .welcome .p2{
 	text-align: center;
 	font-size: 100px;
-	color: tomato;
+	color: #9b9b9b;
 	margin: 0 auto;
-	text-shadow: 1px 1px 2px black; 
+	text-shadow: 2px 2px 2px black; 
 	animation: bounceInDown 2s;
+  animation-delay: .25s;
 }
 .lineContainer{
 	margin: 0 auto;
@@ -175,6 +195,7 @@ body{
 }
 .lineContainer .line {
 	animation: bounceInLeft 1.5s;
+  animation-delay: .25s;
 }
 #testfield {
 	top: auto;
