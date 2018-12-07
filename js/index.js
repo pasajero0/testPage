@@ -3,12 +3,12 @@ document.body.onload = function(){
  		var preloader = document.getElementById('pagePreloader');
  		if (!preloader.classList.contains('.done')){
  			$('#pagePreloader').addClass("done");
- 			console.log('-_-');
+ 			console.log('=== + ===');
  		}
  	}, 400);
 };
 $(window).scroll(function(){
-	const st = $(this).scrollTop();
+	var st = $(this).scrollTop();
 	if (st >= 500 ) {
 		var valDeux = (st/3)-400; // L > R
 		var valTois = -((st/3)-600); // R > L
